@@ -6,8 +6,12 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   width: 100%;
   height: 296px;
-  background: ${({ theme }) => theme.colors['base-profile']};
+  background: linear-gradient(
+    ${({ theme }) => theme.colors['base-profile']},
+    #0d253d
+  );
   position: relative;
+  z-index: -1;
 
   .left {
     position: absolute;
@@ -19,6 +23,6 @@ export const HeaderContainer = styled.header`
     right: 0;
   }
   > img {
-    margin-top: -6rem;
+    margin-top: -4rem;
   }
 `
