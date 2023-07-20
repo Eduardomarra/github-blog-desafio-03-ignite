@@ -1,17 +1,23 @@
 import { IssuesCard } from './components/IssuesCard'
 import { Profile } from './components/Profile'
-import { HomeContainer, IssuesContent } from './styles'
+import { SearchIssues } from './components/SearchIssues'
+import { HomeContainer, HomeContent } from './styles'
 
 export function Home() {
   return (
     <HomeContainer>
       <Profile />
-      <IssuesContent>
+      <SearchIssues />
+      <HomeContent>
         <IssuesCard />
         <IssuesCard />
         <IssuesCard />
         <IssuesCard />
-      </IssuesContent>
+        <IssuesCard />
+        <IssuesCard />
+        <IssuesCard />
+        <IssuesCard />
+      </HomeContent>
     </HomeContainer>
   )
 }

@@ -5,15 +5,16 @@ export const HomeContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
+  padding: 0 1rem;
 `
 
-export const IssuesContent = styled.div`
+export const HomeContent = styled.div`
   width: 100%;
   max-width: 54rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 2rem;
-  column-gap: 2rem;
   margin-top: 2.5rem;
   margin-bottom: 10rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 `
