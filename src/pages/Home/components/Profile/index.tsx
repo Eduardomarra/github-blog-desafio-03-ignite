@@ -13,36 +13,36 @@ import {
   SocialContainer,
   Title,
 } from './styles'
+import { useContext } from 'react'
+import { PostContext } from '../../../../contexts/PostContext'
 
 export function Profile() {
+  const { user } = useContext(PostContext)
+
   return (
     <ProfileContainer>
-      <ProfileContent>
-        <img
-          src="https://avatars.githubusercontent.com/u/60114134?v=4"
-          alt=""
-        />
+      <ProfileContent key={user.login}>
+        <img src={user.avatar_url} alt="" />
         <div>
           <Title>
-            <h1>Eduardo Marra</h1>
-            <NavLink to="https://www.github.com/eduardomarra">
+            <h1>{user.name}</h1>
+            <NavLink to={`${user.html_url}`} target="blank">
               <span>
                 github
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </span>
             </NavLink>
           </Title>
-          <p>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-            viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-            volutpat pulvinar vel mass.
-          </p>
+          <p>{user.bio}</p>
           <SocialContainer>
             <div>
-              <FontAwesomeIcon icon={faUser} /> eduardoMarra
+              <FontAwesomeIcon icon={faUser} /> {user.login}
             </div>
             <div>
-              <FontAwesomeIcon icon={faUsers} /> 32 seguidores
+              <FontAwesomeIcon icon={faUsers} />
+              {user.followers <= 2
+                ? `${user.followers} seguidor`
+                : `${user.followers} seguidores`}
             </div>
           </SocialContainer>
         </div>

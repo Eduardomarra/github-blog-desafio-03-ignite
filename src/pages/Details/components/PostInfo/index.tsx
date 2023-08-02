@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+
 import {
   GithubLogo,
   CalendarCheck,
@@ -13,8 +14,27 @@ import {
   PostInfoSocial,
   PostInfoLinks,
 } from './styles'
+import { dateFormatter } from '../../../../utils/formatterDate'
 
-export function PostInfo() {
+export interface Posts {
+  title: string
+  body: string
+  created_at: string
+  number: number
+  html_url: string
+  comments: number
+  user: {
+    login: string
+  }
+}
+
+interface PostInfoProps {
+  postData: Posts
+}
+
+export function PostInfo({ postData }: PostInfoProps) {
+  const formattedDate = dateFormatter(postData.created_at)
+
   return (
     <PostInfoContainer>
       <PostInfoContent>
@@ -28,16 +48,18 @@ export function PostInfo() {
             <ArrowSquareOut size={16} />
           </NavLink>
         </PostInfoLinks>
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{postData.title}</h1>
         <PostInfoSocial>
           <div>
-            <GithubLogo size={22} weight="fill" /> eduardoMarra
+            <GithubLogo size={22} weight="fill" />
+            {postData.user?.login}
           </div>
           <div>
-            <CalendarCheck size={22} weight="fill" /> 32 seguidores
+            <CalendarCheck size={22} weight="fill" /> {formattedDate}
           </div>
           <div>
-            <ChatCircle size={22} weight="fill" /> 32 seguidores
+            <ChatCircle size={22} weight="fill" />{' '}
+            {`${postData.comments} comentários`}
           </div>
         </PostInfoSocial>
       </PostInfoContent>

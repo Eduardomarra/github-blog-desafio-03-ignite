@@ -20,6 +20,10 @@ export const ProfileContent = styled.div`
   padding: 2rem;
   margin-top: -6rem;
 
+  > div {
+    flex: 1;
+  }
+
   img {
     width: 9rem;
     height: 9rem;
