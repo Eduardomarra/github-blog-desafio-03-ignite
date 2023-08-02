@@ -13,7 +13,7 @@
   <img
     width="768px"
     height="auto"
-    alt="Cart Page "
+    alt="post detail "
     title="Home do blog"
     src="./src/assets/post_github_blog.JPG"
   />
@@ -46,4 +46,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 1. Instalar todos os pacotes com `yarn install`
 2. Executar o comando `yarn dev`
+<<<<<<< HEAD
 3. Em alguns seguntos a URL: `http://localhost:3000/` ficará disponível
+=======
+3. Em alguns seguntos a URL: `http://localhost:3000/` ficará disponível
+>>>>>>> b4415591c81f909b9cdc4f5ebb148f186e061229
