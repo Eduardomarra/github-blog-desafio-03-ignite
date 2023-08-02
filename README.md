@@ -13,9 +13,9 @@
   <img
     width="768px"
     height="auto"
-    alt="Cart Page "
+    alt="post detail "
     title="Home do blog"
-    src="./src/assets/post.JPG"
+    src="./src/assets/post_github_blog.JPG"
   />
 </div>
 
